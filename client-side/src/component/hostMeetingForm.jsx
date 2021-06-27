@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import http from "../services/httpService";
 import userService from "../services/userService";
-import config from "../config.json";
 
 class HostMeetingForm extends Component {
   state = {
@@ -29,7 +28,7 @@ class HostMeetingForm extends Component {
       password: meeting.password,
     };
     try {
-      await http.post(config.apiEndpoint + "meeting", payload);
+      await http.post("meeting", payload);
       window.location = "/my-meetings";
     } catch (err) {
       this.setState({ errors: err.response.data });
@@ -38,7 +37,7 @@ class HostMeetingForm extends Component {
 
   getId = async (e) => {
     e.preventDefault();
-    const { data } = await http.get(config.apiEndpoint + "meeting-link");
+    const { data } = await http.get("meeting-link");
     const meeting = { ...this.state.meeting };
     meeting.id = data;
     this.setState({ meeting });

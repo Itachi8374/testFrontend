@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import http from "../services/httpService";
-import config from "../config.json";
 
 class LoginForm extends Component {
   state = {
@@ -20,10 +19,7 @@ class LoginForm extends Component {
     };
 
     try {
-      const { data: jwt } = await http.post(
-        config.apiEndpoint + "auth/user",
-        payload
-      );
+      const { data: jwt } = await http.post("auth/user", payload);
       localStorage.setItem("token", jwt);
       window.location = "/";
     } catch (err) {

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import http from "../services/httpService";
-import config from "../config.json";
 
 class JoinMeetingForm extends Component {
   state = {
@@ -25,10 +24,7 @@ class JoinMeetingForm extends Component {
       password: meeting.password.trim(),
     };
     try {
-      const meet = await http.post(
-        config.apiEndpoint + "auth/meeting",
-        payload
-      );
+      const meet = await http.post("auth/meeting", payload);
       localStorage.setItem("meet-token", meet.data);
       window.location = "/meeting";
     } catch (err) {

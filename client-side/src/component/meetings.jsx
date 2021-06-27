@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import http from "../services/httpService";
-import config from "../config.json";
 
 class Meetings extends Component {
   state = {};
 
   async componentDidMount() {
     try {
-      const { data } = await http.get(config.apiEndpoint + "meeting");
+      const { data } = await http.get("meeting");
       this.setState({ meetings: data });
     } catch (err) {
       console.log(err.response.data);
@@ -16,7 +15,7 @@ class Meetings extends Component {
 
   handleDelete = async (meet) => {
     try {
-      await http.delete(config.apiEndpoint + "meeting/" + meet.id);
+      await http.delete("meeting/" + meet.id);
       window.location = "/my-meetings";
     } catch (err) {
       console.log(err.response.data);

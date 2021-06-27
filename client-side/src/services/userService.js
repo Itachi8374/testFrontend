@@ -1,8 +1,7 @@
 import http from "./httpService";
 import jwtDecode from "jwt-decode";
-import apiUrl from "../config.json";
 
-const apiEndpoint = apiUrl.apiEndpoint + "user";
+const apiEndpoint = "user";
 
 export function getCurrentUser() {
   try {

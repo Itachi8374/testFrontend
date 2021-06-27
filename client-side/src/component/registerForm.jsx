@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import http from "../services/httpService";
-import config from "../config.json";
 
 class RegisterForm extends Component {
   state = {
@@ -23,7 +22,7 @@ class RegisterForm extends Component {
     };
 
     try {
-      const res = await http.post(config.apiEndpoint + "user", payload);
+      const res = await http.post("user", payload);
       localStorage.setItem("token", res.headers["x-auth-token"]);
       window.location = "/";
     } catch (err) {

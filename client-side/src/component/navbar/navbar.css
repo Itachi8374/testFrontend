@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #464775;
+}
+
+.nav-link,
+.navbar-brand {
+  color: #dadae4;
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+  color: #7475a4;
+}
+
+.left {
+  display: flex;
+  flex: 0.9;
+}
+
+.div_right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout_icon {
+  display: flex;
+}

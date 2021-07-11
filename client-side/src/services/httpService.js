@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 axios.defaults.baseURL = "https://limitless-cliffs-16104.herokuapp.com/api/";
+// axios.defaults.baseURL = "http://localhost:8080/api/";
 axios.defaults.headers.common["x-auth-token"] = localStorage.getItem("token");
 
 axios.interceptors.response.use(null, (error) => {

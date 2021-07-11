@@ -27,8 +27,14 @@ class HostMeetingForm extends Component {
       name: meeting.name,
       password: meeting.password,
     };
+    const conversation = {
+      meetId: meeting.id,
+      name: meeting.name,
+      hostId: userService.getCurrentUser()._id,
+    };
     try {
       await http.post("meeting", payload);
+      await http.post("conversation", conversation);
       window.location = "/my-meetings";
     } catch (err) {
       this.setState({ errors: err.response.data });

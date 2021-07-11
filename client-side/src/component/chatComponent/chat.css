@@ -1,0 +1,84 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  flex: 0.7;
+}
+
+.header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.headerInfo > h3 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+}
+
+.body {
+  flex: 1;
+  padding: 30px;
+  overflow: scroll;
+}
+
+.message {
+  position: relative;
+  font-size: 16px;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+.timestamp {
+  margin: 5px;
+  font-size: xx-small;
+}
+
+.name {
+  position: absolute;
+  top: -15px;
+  font-weight: 800;
+  font-size: 10px;
+}
+
+.receiver {
+  margin-left: auto;
+  background-color: #e5e5f1;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+  border-top: 1px solid lightgray;
+}
+
+.footer > form {
+  flex: 1;
+  display: flex;
+}
+
+.footer > form > input {
+  flex: 1;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  margin-left: 5px;
+  outline: none;
+}
+
+.footer > form > button {
+  margin: auto 5px;
+}

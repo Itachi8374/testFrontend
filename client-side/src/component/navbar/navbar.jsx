@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import "./navbar.css";
+import { Avatar } from "@material-ui/core";
 
 class Navbar extends Component {
   state = {};
   render() {
     const { user, meet } = this.props;
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg">
+        <div className="container-fluid left">
           <Link className="navbar-brand" to="/">
             Sabha
           </Link>
@@ -30,6 +33,11 @@ class Navbar extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/chats">
+                  Chats
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/host-meeting">
                   Host Meet
                 </NavLink>
@@ -46,36 +54,41 @@ class Navbar extends Component {
                   </NavLink>
                 </li>
               )}
-              {!user && (
-                <React.Fragment>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/login">
-                      Login
-                    </NavLink>
-                  </li>
-                  <li className="nav-item ">
-                    <NavLink className="nav-link" to="/register">
-                      Sign Up
-                    </NavLink>
-                  </li>
-                </React.Fragment>
-              )}
-              {user && (
-                <React.Fragment>
-                  <li className="nav-item ">
-                    <NavLink className="nav-link" to="/my-meetings">
-                      {user.name}
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/logout">
-                      Logout
-                    </NavLink>
-                  </li>
-                </React.Fragment>
-              )}
             </ul>
           </div>
+        </div>
+        <div className="div_right">
+          {!user && (
+            <React.Fragment>
+              <div className="nav-item">
+                <NavLink className="nav-link " to="/login">
+                  Login
+                </NavLink>
+              </div>
+              <div className="nav-item ml-10 p-20">
+                <NavLink className="nav-link " to="/register">
+                  Sign Up
+                </NavLink>
+              </div>
+            </React.Fragment>
+          )}
+          {user && (
+            <React.Fragment className="align-middle">
+              <div className="nav-item ">
+                <NavLink className="nav-link" to="/my-meetings">
+                  {user.name}
+                </NavLink>
+              </div>
+              <div className="nav-item ">
+                <NavLink className="nav-link " to="/logout">
+                  <span className="logout_icon">
+                    <ExitToAppIcon />
+                    Logout
+                  </span>
+                </NavLink>
+              </div>
+            </React.Fragment>
+          )}
         </div>
       </nav>
     );

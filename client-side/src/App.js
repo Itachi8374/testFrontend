@@ -35,7 +35,7 @@ export default function App() {
       const meetT = jwtDecode(meetToken);
       setMeet(meetT);
     } catch (ex) {}
-    socket.current = io("http://localhost:8080");
+    socket.current = io("https://limitless-cliffs-16104.herokuapp.com/");
   }, []);
 
   return (

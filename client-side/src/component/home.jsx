@@ -7,7 +7,7 @@ class Home extends Component {
       <div className="container-fluid">
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
-            Login if alredy have account. Else register
+            Login if already have account. Else register
           </li>
           <li className="list-group-item">
             Sign up is necessary to use Sabha's service

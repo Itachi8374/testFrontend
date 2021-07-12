@@ -181,19 +181,19 @@ class MeetingScreen extends Component {
         <nav className="navbar fixed-bottom navbar-light ">
           <div className="toolbar">
             <IconButton onClick={() => this.executeCommand("toggleAudio")}>
-              {!this.state.isAudioMuted && (
+              {this.state.isAudioMuted && (
                 <MicIcon style={{ color: "white" }} />
               )}
-              {this.state.isAudioMuted && (
+              {!this.state.isAudioMuted && (
                 <MicOffIcon style={{ color: "white" }} />
               )}
             </IconButton>
 
             <IconButton onClick={() => this.executeCommand("toggleVideo")}>
-              {!this.state.isVideoMuted && (
+              {this.state.isVideoMuted && (
                 <VideocamIcon style={{ color: "white" }} />
               )}
-              {this.state.isVideoMuted && (
+              {!this.state.isVideoMuted && (
                 <VideocamOffIcon style={{ color: "white" }} />
               )}
             </IconButton>
@@ -201,10 +201,10 @@ class MeetingScreen extends Component {
             <IconButton
               onClick={() => this.executeCommand("toggleShareScreen")}
             >
-              {!this.state.isScreenShare && (
+              {this.state.isScreenShare && (
                 <ScreenShareIcon style={{ color: "white" }} />
               )}
-              {this.state.isScreenShare && (
+              {!this.state.isScreenShare && (
                 <StopScreenShareIcon style={{ color: "white" }} />
               )}
             </IconButton>
